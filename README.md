@@ -10,9 +10,34 @@
 
 ## 🚀 Overview
 
-FinAccess is a complete hardware-accelerated, enterprise-grade loan evaluation platform. It leverages **XGBoost, SHAP, PyTorch (BiLSTM), and GraphSAGE** to generate an intricate, explainable risk profile for loan applicants. 
+FinAccess is a complete hardware-accelerated, enterprise-grade loan evaluation platform designed for hackathons and production environments alike. Instead of relying on a single black-box algorithm, FinAccess uses a **Multi-Modal AI Fusion Pipeline** to generate a comprehensive, transparent risk profile.
 
 Designed for extreme concurrency, the backend isolates heavy Machine Learning computations from the asynchronous web event loop using dedicated **ThreadPoolExecutors**. The React frontend provides a stunning, premium UI with real-time telemetry, fairness compliance tracking, and dynamic visualizations.
+
+## 🧠 The Machine Learning Pipeline
+
+Our ML architecture analyzes applicants from three distinct mathematical perspectives and ensembles them using a meta-learner:
+
+1. **Tabular Risk Modeling (XGBoost + SHAP XAI)**
+   - **How it works:** Handles core financial data (Income, Loan Amount, Credit History).
+   - **Why it's special:** We integrated **SHAP (SHapley Additive exPlanations)**. The UI doesn't just say "Approved"—it renders a real-time bar chart showing exactly *which* features increased or decreased the risk score (e.g., "Credit History reduced risk by 32%"). 
+
+2. **Feature-Group Attention (BiLSTM via PyTorch)**
+   - **How it works:** We adapted a Bidirectional LSTM to process the applicant's data across distinct logical feature groups (Demographics → Income → Risk Indicators).
+   - **Why it's special:** By applying an Attention Mechanism, our UI visualizes exactly which "phase" of the applicant's profile the neural network focused on the most when deriving its sub-score.
+
+3. **Community Risk Mapping (Graph Neural Networks / GraphSAGE)**
+   - **How it works:** We synthesize the applicant into a mathematical "Graph" where edges represent feature similarities.
+   - **Why it's special:** It calculates "Community Risk." If an applicant's financial DNA closely matches a cluster of past low-risk individuals, the GCN lowers their risk score natively.
+
+4. **The Sigmoid Fusion Layer**
+   - All three model sub-scores are fed into a final meta-learner that outputs the ultimate, calibrated Risk Score and Confidence metric.
+
+## ⚖️ Fairness & Compliance
+
+AI bias in banking is a massive real-world problem. FinAccess tackles this head-on with live **Disparate Impact Monitoring**:
+- The backend automatically tracks approval rates grouped by demographics (Gender, Property Area).
+- It calculates the **Four-Fifths (4/5ths) Rule** in real-time. If one group's approval rate drops below 80% of the highest-approving group, the Admin Dashboard immediately flags a compliance violation.
 
 ## ✨ Key Features
 
@@ -24,7 +49,7 @@ Designed for extreme concurrency, the backend isolates heavy Machine Learning co
 ### For the Admin
 - **System Telemetry:** Live monitoring of active threads, request volume, and average ML latency via real-time WebSocket/Polling.
 - **Fairness & Compliance:** Built-in **Disparate Impact (4/5ths Rule)** monitoring. Automatically groups historical predictions by demographics (Gender, Property Area) to ensure unbiased AI models.
-- **Concurrency Benchmarks:** Built to scale seamlessly. Includes Locust load testing to validate asynchronous architecture.
+- **Concurrency Benchmarks:** Built to scale seamlessly. Includes Locust load testing to validate asynchronous ThreadPool architecture.
 
 ---
 
