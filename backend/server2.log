@@ -1,0 +1,16 @@
+ERROR:    [Errno 10048] error while attempting to bind on address ('0.0.0.0', 8000): [winerror 10048] only one usage of each socket address (protocol/network address/port) is normally permitted
+
+=======================================================
+  FinAccess Backend -- http://localhost:8000
+  API Docs          -- http://localhost:8000/docs
+=======================================================
+
+  Pre-seeded accounts:
+    Admin:     admin@finaccess.com     / admin123
+    Applicant: applicant@finaccess.com / pass1234
+
+  Register new accounts at: POST /auth/register
+=======================================================
+
+[WARN] ML predictor unavailable (No module named 'torch'). Using synthetic predictions.
+

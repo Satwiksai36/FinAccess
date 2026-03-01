@@ -1,0 +1,44 @@
+ERROR:    [Errno 10048] error while attempting to bind on address ('0.0.0.0', 8000): [winerror 10048] only one usage of each socket address (protocol/network address/port) is normally permitted
+
+=======================================================
+  FinAccess Backend -- http://localhost:8000
+  API Docs          -- http://localhost:8000/docs
+=======================================================
+
+  Pre-seeded accounts:
+    Admin:     admin@finaccess.com     / admin123
+    Applicant: applicant@finaccess.com / pass1234
+
+  Register new accounts at: POST /auth/register
+=======================================================
+
+[WARN] ML predictor unavailable (No module named 'torch'). Using synthetic predictions.
+
+c:\Users\hp\Desktop\FinAccess\backend>type server_output.log && curl -s http://localhost:8000/health
+ERROR:    [Errno 10048] error while attempting to bind on address ('0.0.0.0', 8000): [winerror 10048] only one usage of each socket address (protocol/network address/port) is normally permitted
+
+=======================================================
+  FinAccess Backend -- http://localhost:8000
+  API Docs          -- http://localhost:8000/docs
+=======================================================
+
+  Pre-seeded accounts:
+    Admin:     admin@finaccess.com     / admin123
+    Applicant: applicant@finaccess.com / pass1234
+
+  Register new accounts at: POST /auth/register
+=======================================================
+
+[WARN] ML predictor unavailable (No module named 'torch'). Using synthetic predictions.
+
+c:\Users\hp\Desktop\FinAccess\backend>type server_output.log && curl -s http://localhost:8000/health
+ERROR:    [Errno 10048] error while attempting to bind on address ('0.0.0.0', 8000): [winerror 10048] only one usage of each socket address (protocol/network address/port) is normally pe{"status":"ok","uptime_seconds":3665}
+c:\Users\hp\Desktop\FinAccess\backend>ype server_output.log
+'ype' is not recognized as an internal or external command,
+operable program or batch file.
+
+c:\Users\hp\Desktop\FinAccess\backend>ul -s http://localhost:8000/health
+'ul' is not recognized as an internal or external command,
+operable program or batch file.
+
+c:\Users\hp\Desktop\FinAccess\backend>

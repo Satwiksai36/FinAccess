@@ -1,0 +1,43 @@
+<svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0F1923"/>
+      <stop offset="100%" stop-color="#0A1118"/>
+    </linearGradient>
+    <linearGradient id="line" x1="8" y1="32" x2="36" y2="12" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#4F7CFF"/>
+      <stop offset="100%" stop-color="#00E5A0"/>
+    </linearGradient>
+    <linearGradient id="border" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#00E5A0" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#4F7CFF" stop-opacity="0.2"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="44" height="44" rx="11" fill="url(#bg)"/>
+  <!-- Gradient border -->
+  <rect x="0.75" y="0.75" width="42.5" height="42.5" rx="10.25" stroke="url(#border)" stroke-width="1"/>
+
+  <!-- Rising chart path -->
+  <polyline points="9,31 17,22 24,27 35,13"
+    stroke="url(#line)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"
+    filter="url(#glow)"/>
+
+  <!-- Bottom baseline -->
+  <line x1="9" y1="34" x2="35" y2="34" stroke="rgba(255,255,255,0.07)" stroke-width="1.2" stroke-linecap="round"/>
+
+  <!-- Vertical tick lines -->
+  <line x1="9"  y1="31" x2="9"  y2="34" stroke="rgba(255,255,255,0.12)" stroke-width="1.2" stroke-linecap="round"/>
+  <line x1="17" y1="22" x2="17" y2="34" stroke="rgba(255,255,255,0.05)" stroke-width="1" stroke-linecap="round"/>
+  <line x1="24" y1="27" x2="24" y2="34" stroke="rgba(255,255,255,0.05)" stroke-width="1" stroke-linecap="round"/>
+  <line x1="35" y1="13" x2="35" y2="34" stroke="rgba(255,255,255,0.05)" stroke-width="1" stroke-linecap="round"/>
+
+  <!-- Glowing dot at peak -->
+  <circle cx="35" cy="13" r="3" fill="#00E5A0" filter="url(#glow)"/>
+  <circle cx="35" cy="13" r="1.6" fill="white"/>
+</svg>

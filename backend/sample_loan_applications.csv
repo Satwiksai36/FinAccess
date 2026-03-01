@@ -1,0 +1,11 @@
+Name,Gender,Married,Dependents,Education,Self_Employed,ApplicantIncome,CoapplicantIncome,LoanAmount,Loan_Amount_Term,Credit_History,Property_Area
+Alice Johnson,Female,Yes,1,Graduate,No,6500,1500,150,360,1,Urban
+Bob Martinez,Male,No,0,Not Graduate,No,2800,0,80,240,1,Semiurban
+Carol Singh,Female,Yes,2,Graduate,Yes,9200,2000,220,360,1,Urban
+David Okafor,Male,Yes,3+,Not Graduate,No,3200,800,120,360,0,Rural
+Emma Chen,Female,No,0,Graduate,No,7800,0,180,360,1,Urban
+Frank Williams,Male,Yes,1,Graduate,Yes,12000,3000,320,360,1,Semiurban
+Grace Kim,Female,Yes,2,Graduate,No,4500,1200,110,240,1,Semiurban
+Henry Brown,Male,No,0,Not Graduate,Yes,1900,0,60,180,0,Rural
+Iris Patel,Female,Yes,1,Graduate,No,5600,2500,160,360,1,Urban
+James Lee,Male,Yes,0,Graduate,No,8400,0,200,360,1,Urban

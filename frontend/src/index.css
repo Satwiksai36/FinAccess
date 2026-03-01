@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #06080F;
+    color: #EDF2F7;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0D1117;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00E5A0;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4F7CFF;
+}
+
+/* ── Hero noise texture overlay ── */
+.hero-noise::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Card glass ── */
+.card {
+  background: #0D1117;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.04);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+  border-color: rgba(0, 229, 160, 0.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(0, 229, 160, 0.12);
+  transform: translateY(-2px);
+}
+
+/* ── Glow text ── */
+.text-glow-primary {
+  text-shadow: 0 0 30px rgba(0, 229, 160, 0.4);
+}
+
+.text-glow-blue {
+  text-shadow: 0 0 30px rgba(79, 124, 255, 0.4);
+}
+
+/* ── Badge ── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 999px;
+}
+
+.badge-primary {
+  background: rgba(0, 229, 160, 0.12);
+  color: #00E5A0;
+  border: 1px solid rgba(0, 229, 160, 0.25);
+}
+
+.badge-blue {
+  background: rgba(79, 124, 255, 0.12);
+  color: #4F7CFF;
+  border: 1px solid rgba(79, 124, 255, 0.25);
+}
+
+.badge-success {
+  background: rgba(34, 197, 94, 0.12);
+  color: #22C55E;
+  border: 1px solid rgba(34, 197, 94, 0.25);
+}
+
+.badge-danger {
+  background: rgba(248, 113, 113, 0.12);
+  color: #F87171;
+  border: 1px solid rgba(248, 113, 113, 0.25);
+}
+
+.badge-warning {
+  background: rgba(245, 158, 11, 0.12);
+  color: #F59E0B;
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+/* ── Tab underline active ── */
+.tab-active-line::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #00E5A0;
+  border-radius: 2px 2px 0 0;
+  box-shadow: 0 0 8px rgba(0, 229, 160, 0.5);
+}
+
+/* ── Terminal scan animation ── */
+@keyframes scan {
+  0% {
+    top: 0%;
+    opacity: 0.8;
+  }
+
+  100% {
+    top: 105%;
+    opacity: 0;
+  }
+}
+
+.scan-anim {
+  animation: scan 2.4s linear infinite;
+}
+
+/* ── Pulse dot ── */
+@keyframes pulseDot {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+}
+
+.pulse-dot {
+  animation: pulseDot 2s ease-in-out infinite;
+}
+
+/* ── Button Primary ── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #00E5A0, #00C48A);
+  color: #06080F;
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 0.01em;
+  padding: 12px 28px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(0, 229, 160, 0.35), 0 4px 12px rgba(0, 0, 0, 0.5);
+  transition: all 0.25s ease;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 32px rgba(0, 229, 160, 0.55), 0 6px 20px rgba(0, 0, 0, 0.6);
+  transform: translateY(-1px);
+}
+
+/* ── Button Secondary (outline) ── */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: #EDF2F7;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 11px 28px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-outline:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* ── Grid lines ── */
+.bg-grid {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* ── Input dark ── */
+.input-dark {
+  width: 100%;
+  background: #06080F;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  color: #EDF2F7;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 16px;
+  outline: none;
+  font-family: 'Montserrat', sans-serif;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-dark:focus {
+  border-color: rgba(0, 229, 160, 0.5);
+  box-shadow: 0 0 0 3px rgba(0, 229, 160, 0.1);
+}
+
+.input-dark:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.input-dark::placeholder {
+  color: #4B5563;
+}
+
+/* ── Select dark ── */
+select.input-dark option {
+  background: #0D1117;
+  color: #EDF2F7;
+}
