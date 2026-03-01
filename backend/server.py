@@ -520,4 +520,5 @@ if __name__ == "__main__":
     print("  For full production stack: cd backend && docker-compose up")
     print("  (uses app/main.py with Redis, PostgreSQL, full ThreadPoolExecutor)")
     print("="*60 + "\n")
-    uvicorn.run(app, host="0.0.0.0", port=8000, log_level="warning")
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port, log_level="warning")
